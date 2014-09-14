@@ -30,35 +30,20 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                                </variation>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="J9b-1w-HKD" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="IUk-xW-JIP"/>
-                            <constraint firstItem="J9b-1w-HKD" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="ge5-0T-c9l"/>
-                            <constraint firstItem="J9b-1w-HKD" firstAttribute="leading" secondItem="2fi-mo-0CV" secondAttribute="leading" id="tOO-Sb-6mc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="J9b-1w-HKD" secondAttribute="trailing" constant="-16" id="zEm-Ll-yWC"/>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="J9b-1w-HKD"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="IUk-xW-JIP"/>
-                                <exclude reference="ge5-0T-c9l"/>
-                                <exclude reference="tOO-Sb-6mc"/>
-                                <exclude reference="zEm-Ll-yWC"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="J9b-1w-HKD"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="IUk-xW-JIP"/>
-                                <include reference="ge5-0T-c9l"/>
-                                <include reference="tOO-Sb-6mc"/>
-                                <include reference="zEm-Ll-yWC"/>
                             </mask>
                         </variation>
                     </view>

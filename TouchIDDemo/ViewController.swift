@@ -22,12 +22,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITableViewDataSour
         self.tblNotes.delegate = self;
         self.tblNotes.dataSource = self;
         authenticateUser()
-        loadData()
         
-        
-        if (dataArray != nil){
-            NSLog("dataArray.count:%i", dataArray!.count)
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -153,6 +148,7 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITableViewDataSour
     // dataArray was declared as an optional, so it could be nil
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         if let array = dataArray {
+            NSLog("dataArray.count inside numberofrows in section: %i", dataArray!.count)
             return array.count
         } else {
             
@@ -164,15 +160,9 @@ class ViewController: UIViewController, UIAlertViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         NSLog("came in to cellforrowatindexpath")
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
         
         let currentNote = self.dataArray.objectAtIndex(indexPath.row) as Dictionary<String, String>
-        
-        if (currentNote.isEmpty == false) {
-            NSLog("currentnote.title", currentNote["title"]! as String)
-        }
-        
-        
         
         cell.textLabel!.text = currentNote["title"];
         
