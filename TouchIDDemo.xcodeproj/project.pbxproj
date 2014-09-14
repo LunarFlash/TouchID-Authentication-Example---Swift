@@ -13,6 +13,8 @@
 		35A8DF1219C3F19900049FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A8DF1019C3F19900049FA6 /* Main.storyboard */; };
 		35A8DF1419C3F19900049FA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35A8DF1319C3F19900049FA6 /* Images.xcassets */; };
 		35A8DF2019C3F19900049FA6 /* TouchIDDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8DF1F19C3F19900049FA6 /* TouchIDDemoTests.swift */; };
+		35A8DF2A19C3F33E00049FA6 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8DF2919C3F33E00049FA6 /* EditNoteViewController.swift */; };
+		35A8DF2C19C49E3800049FA6 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A8DF2B19C49E3800049FA6 /* LocalAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		35A8DF1919C3F19900049FA6 /* TouchIDDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchIDDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A8DF1E19C3F19900049FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35A8DF1F19C3F19900049FA6 /* TouchIDDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDDemoTests.swift; sourceTree = "<group>"; };
+		35A8DF2919C3F33E00049FA6 /* EditNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
+		35A8DF2B19C49E3800049FA6 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A8DF2C19C49E3800049FA6 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +64,7 @@
 		35A8DEFB19C3F19800049FA6 = {
 			isa = PBXGroup;
 			children = (
+				35A8DF2B19C49E3800049FA6 /* LocalAuthentication.framework */,
 				35A8DF0619C3F19900049FA6 /* TouchIDDemo */,
 				35A8DF1C19C3F19900049FA6 /* TouchIDDemoTests */,
 				35A8DF0519C3F19900049FA6 /* Products */,
@@ -79,6 +85,7 @@
 			children = (
 				35A8DF0919C3F19900049FA6 /* AppDelegate.swift */,
 				35A8DF0E19C3F19900049FA6 /* ViewController.swift */,
+				35A8DF2919C3F33E00049FA6 /* EditNoteViewController.swift */,
 				35A8DF1019C3F19900049FA6 /* Main.storyboard */,
 				35A8DF1319C3F19900049FA6 /* Images.xcassets */,
 				35A8DF0B19C3F19900049FA6 /* TouchIDDemo.xcdatamodeld */,
@@ -213,6 +220,7 @@
 			files = (
 				35A8DF0F19C3F19900049FA6 /* ViewController.swift in Sources */,
 				35A8DF0A19C3F19900049FA6 /* AppDelegate.swift in Sources */,
+				35A8DF2A19C3F33E00049FA6 /* EditNoteViewController.swift in Sources */,
 				35A8DF0D19C3F19900049FA6 /* TouchIDDemo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +407,7 @@
 				35A8DF2519C3F19900049FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35A8DF2619C3F19900049FA6 /* Build configuration list for PBXNativeTarget "TouchIDDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +416,7 @@
 				35A8DF2819C3F19900049FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

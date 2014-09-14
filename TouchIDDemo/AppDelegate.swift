@@ -4,7 +4,7 @@
 //
 //  Created by Yi Wang on 9/12/14.
 //  Copyright (c) 2014 Yi. All rights reserved.
-//
+//  http://www.appcoda.com/touch-id-api-ios8/
 
 import UIKit
 import CoreData
@@ -106,6 +106,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    // MARK: - Helper
+    func getPathOfDataFile() -> String {
+        let pathsArray = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let documentsPath = pathsArray[0] as String
+        let dataFilePath = documentsPath.stringByAppendingPathComponent("notesData")
+        return dataFilePath;
+    }
+    
+    func checkIfDataFileExists() -> Bool {
+        if NSFileManager.defaultManager().fileExistsAtPath(getPathOfDataFile())
+        {
+            return true
+        }
+        return false
+    }
+    
 
 }
 

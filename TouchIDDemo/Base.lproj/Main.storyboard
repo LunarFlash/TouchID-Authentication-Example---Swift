@@ -1,25 +1,195 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6162" systemVersion="14A238h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Z4P-QY-kgv">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6160"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--My Notes-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="TouchIDDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="J9b-1w-HKD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="kvv-IO-HDV">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kvv-IO-HDV" id="lT2-bJ-bNU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J9b-1w-HKD" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="IUk-xW-JIP"/>
+                            <constraint firstItem="J9b-1w-HKD" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="ge5-0T-c9l"/>
+                            <constraint firstItem="J9b-1w-HKD" firstAttribute="leading" secondItem="2fi-mo-0CV" secondAttribute="leading" id="tOO-Sb-6mc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J9b-1w-HKD" secondAttribute="trailing" constant="-16" id="zEm-Ll-yWC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="J9b-1w-HKD"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="IUk-xW-JIP"/>
+                                <exclude reference="ge5-0T-c9l"/>
+                                <exclude reference="tOO-Sb-6mc"/>
+                                <exclude reference="zEm-Ll-yWC"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="J9b-1w-HKD"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="IUk-xW-JIP"/>
+                                <include reference="ge5-0T-c9l"/>
+                                <include reference="tOO-Sb-6mc"/>
+                                <include reference="zEm-Ll-yWC"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="My Notes" id="TSJ-X5-LVN">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="Nrw-gx-agT">
+                            <connections>
+                                <segue destination="M9w-M7-gPm" kind="show" identifier="idSegueEditNote" id="dbb-T6-1Kj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tblNotes" destination="J9b-1w-HKD" id="KgP-F8-1BD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1104" y="383"/>
+        </scene>
+        <!--Edit Note-->
+        <scene sceneID="Zov-nK-cqZ">
+            <objects>
+                <viewController id="M9w-M7-gPm" customClass="EditNoteViewController" customModule="TouchIDDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9uy-Px-Wue"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ieh-8d-XNd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6rL-GU-YpY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M1D-uv-eLJ">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJc-w9-qXb">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="195" id="qaJ-M1-bJJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qaJ-M1-bJJ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="qaJ-M1-bJJ"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M1D-uv-eLJ" firstAttribute="trailing" secondItem="6rL-GU-YpY" secondAttribute="trailingMargin" id="5NN-xq-FH2"/>
+                            <constraint firstItem="M1D-uv-eLJ" firstAttribute="top" secondItem="9uy-Px-Wue" secondAttribute="bottom" constant="8" symbolic="YES" id="9EX-8y-2EF"/>
+                            <constraint firstItem="EJc-w9-qXb" firstAttribute="top" secondItem="M1D-uv-eLJ" secondAttribute="bottom" constant="18" id="Pmc-QA-sxp"/>
+                            <constraint firstItem="EJc-w9-qXb" firstAttribute="leading" secondItem="6rL-GU-YpY" secondAttribute="leadingMargin" constant="-16" id="fDL-pk-Xu7"/>
+                            <constraint firstItem="M1D-uv-eLJ" firstAttribute="leading" secondItem="6rL-GU-YpY" secondAttribute="leadingMargin" id="lzd-iA-Je2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EJc-w9-qXb" secondAttribute="trailing" constant="-16" id="nSG-Yr-OhO"/>
+                            <constraint firstItem="M1D-uv-eLJ" firstAttribute="centerX" secondItem="EJc-w9-qXb" secondAttribute="centerX" id="psx-ew-rE0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="M1D-uv-eLJ"/>
+                                <exclude reference="EJc-w9-qXb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="5NN-xq-FH2"/>
+                                <exclude reference="9EX-8y-2EF"/>
+                                <exclude reference="lzd-iA-Je2"/>
+                                <exclude reference="psx-ew-rE0"/>
+                                <exclude reference="Pmc-QA-sxp"/>
+                                <exclude reference="fDL-pk-Xu7"/>
+                                <exclude reference="nSG-Yr-OhO"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="M1D-uv-eLJ"/>
+                                <include reference="EJc-w9-qXb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="5NN-xq-FH2"/>
+                                <include reference="9EX-8y-2EF"/>
+                                <include reference="lzd-iA-Je2"/>
+                                <include reference="psx-ew-rE0"/>
+                                <include reference="Pmc-QA-sxp"/>
+                                <include reference="fDL-pk-Xu7"/>
+                                <include reference="nSG-Yr-OhO"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Edit Note" id="b0L-ZZ-HBY">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="4nM-sU-gtx">
+                            <connections>
+                                <action selector="saveNote:" destination="M9w-M7-gPm" id="ed7-Ta-2yt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tvNoteBody" destination="EJc-w9-qXb" id="QWq-Mz-XbN"/>
+                        <outlet property="txtNoteTitle" destination="M1D-uv-eLJ" id="loa-hL-uRR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h3y-Jq-uK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1816.5" y="382.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WYV-Io-9T8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z4P-QY-kgv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ak2-Yw-oFA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="RWH-v2-8Wr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CMi-m1-S7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="462" y="1044"/>
         </scene>
     </scenes>
 </document>
